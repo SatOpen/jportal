@@ -10,6 +10,8 @@
                 "bankAccount": "Bank Account",
                 "label": "Label",
                 "operation": "Operation",
+                "userOrder": "User Order",
+                "packageTv": "Package Tv",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

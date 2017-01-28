@@ -1,0 +1,10 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "OrderStatusEnum" : {
+            "null": "",
+            "Pending": "Pending",
+            "Validated": "Validated",
+            "Suspended": "Suspended"
+        }
+    }
+}

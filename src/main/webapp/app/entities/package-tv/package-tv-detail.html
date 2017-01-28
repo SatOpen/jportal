@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="jhipsterSampleApplicationApp.packageTv.detail.title">Package Tv</span> {{vm.packageTv.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.packageName">Package Name</span></dt>
+        <dd>
+            <span data-translate="{{'jhipsterSampleApplicationApp.PackageNameEnum.' + vm.packageTv.packageName}}">{{vm.packageTv.packageName}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.priceSkrill">Price Skrill</span></dt>
+        <dd>
+            <span>{{vm.packageTv.priceSkrill}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.priceNeteller">Price Neteller</span></dt>
+        <dd>
+            <span>{{vm.packageTv.priceNeteller}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.priceBitcoins">Price Bitcoins</span></dt>
+        <dd>
+            <span>{{vm.packageTv.priceBitcoins}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.note">Note</span></dt>
+        <dd>
+            <span>{{vm.packageTv.note}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.priceMyCommerce">Price My Commerce</span></dt>
+        <dd>
+            <span>{{vm.packageTv.priceMyCommerce}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.descriptionMyCommerce">Description My Commerce</span></dt>
+        <dd>
+            <span>{{vm.packageTv.descriptionMyCommerce}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.descriptionSkrill">Description Skrill</span></dt>
+        <dd>
+            <span>{{vm.packageTv.descriptionSkrill}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.descriptionNeteller">Description Neteller</span></dt>
+        <dd>
+            <span>{{vm.packageTv.descriptionNeteller}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.descriptionBitcoins">Description Bitcoins</span></dt>
+        <dd>
+            <span>{{vm.packageTv.descriptionBitcoins}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.pricePaySafeCard">Price Pay Safe Card</span></dt>
+        <dd>
+            <span>{{vm.packageTv.pricePaySafeCard}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.packageTv.descriptionPaySafeCard">Description Pay Safe Card</span></dt>
+        <dd>
+            <span>{{vm.packageTv.descriptionPaySafeCard}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="package-tv-detail.edit({id:vm.packageTv.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

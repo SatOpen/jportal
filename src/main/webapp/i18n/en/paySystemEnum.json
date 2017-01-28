@@ -1,0 +1,12 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "PaySystemEnum" : {
+            "null": "",
+            "MyCommerce": "MyCommerce",
+            "Skrill": "Skrill",
+            "Neteller": "Neteller",
+            "PaySafeCard": "PaySafeCard",
+            "Bitcoins": "Bitcoins"
+        }
+    }
+}

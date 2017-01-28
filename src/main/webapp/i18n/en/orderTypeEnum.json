@@ -1,0 +1,9 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "OrderTypeEnum" : {
+            "null": "",
+            "New": "New",
+            "Renewal": "Renewal"
+        }
+    }
+}

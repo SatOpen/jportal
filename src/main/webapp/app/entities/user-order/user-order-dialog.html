@@ -1,0 +1,133 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myUserOrderLabel" data-translate="jhipsterSampleApplicationApp.userOrder.home.createOrEditLabel">Create or edit a User Order</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.userOrder.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.userOrder.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.validated" for="field_validated">Validated</label>
+            <input type="checkbox" class="form-control" name="validated" id="field_validated"
+                    ng-model="vm.userOrder.validated"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.magDevice" for="field_magDevice">Mag Device</label>
+            <input type="checkbox" class="form-control" name="magDevice" id="field_magDevice"
+                    ng-model="vm.userOrder.magDevice"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.creationDate" for="field_creationDate">Creation Date</label>
+                <div class="input-group">
+                    <input id="field_creationDate" type="text" class="form-control" name="creationDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.userOrder.creationDate" is-open="vm.datePickerOpenStatus.creationDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('creationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.orderStatus" for="field_orderStatus">Order Status</label>
+            <select class="form-control" name="orderStatus" ng-model="vm.userOrder.orderStatus" id="field_orderStatus">
+                <option value="Pending" data-translate="jhipsterSampleApplicationApp.OrderStatusEnum.Pending">Pending</option>
+                <option value="Validated" data-translate="jhipsterSampleApplicationApp.OrderStatusEnum.Validated">Validated</option>
+                <option value="Suspended" data-translate="jhipsterSampleApplicationApp.OrderStatusEnum.Suspended">Suspended</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.orderType" for="field_orderType">Order Type</label>
+            <select class="form-control" name="orderType" ng-model="vm.userOrder.orderType" id="field_orderType">
+                <option value="New" data-translate="jhipsterSampleApplicationApp.OrderTypeEnum.New">New</option>
+                <option value="Renewal" data-translate="jhipsterSampleApplicationApp.OrderTypeEnum.Renewal">Renewal</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.paySystem" for="field_paySystem">Pay System</label>
+            <select class="form-control" name="paySystem" ng-model="vm.userOrder.paySystem" id="field_paySystem">
+                <option value="MyCommerce" data-translate="jhipsterSampleApplicationApp.PaySystemEnum.MyCommerce">MyCommerce</option>
+                <option value="Skrill" data-translate="jhipsterSampleApplicationApp.PaySystemEnum.Skrill">Skrill</option>
+                <option value="Neteller" data-translate="jhipsterSampleApplicationApp.PaySystemEnum.Neteller">Neteller</option>
+                <option value="PaySafeCard" data-translate="jhipsterSampleApplicationApp.PaySystemEnum.PaySafeCard">PaySafeCard</option>
+                <option value="Bitcoins" data-translate="jhipsterSampleApplicationApp.PaySystemEnum.Bitcoins">Bitcoins</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.usernameRenewal" for="field_usernameRenewal">Username Renewal</label>
+            <input type="text" class="form-control" name="usernameRenewal" id="field_usernameRenewal"
+                    ng-model="vm.userOrder.usernameRenewal"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.passwordRenewal" for="field_passwordRenewal">Password Renewal</label>
+            <input type="text" class="form-control" name="passwordRenewal" id="field_passwordRenewal"
+                    ng-model="vm.userOrder.passwordRenewal"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.note" for="field_note">Note</label>
+            <input type="text" class="form-control" name="note" id="field_note"
+                    ng-model="vm.userOrder.note"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.note.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.note.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.userOrder.magAddress" for="field_magAddress">Mag Address</label>
+            <input type="text" class="form-control" name="magAddress" id="field_magAddress"
+                    ng-model="vm.userOrder.magAddress"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.magAddress.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.magAddress.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="jhipsterSampleApplicationApp.userOrder.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.userOrder.user" ng-options="user as user.id for user in vm.users track by user.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.user.$invalid">
+            <p class="help-block"
+                ng-show="editForm.user.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="jhipsterSampleApplicationApp.userOrder.packageTv" for="field_packageTv">Package Tv</label>
+            <select class="form-control" id="field_packageTv" name="packageTv" ng-model="vm.userOrder.packageTv" ng-options="packageTv as packageTv.id for packageTv in vm.packagetvs track by packageTv.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.packageTv.$invalid">
+            <p class="help-block"
+                ng-show="editForm.packageTv.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

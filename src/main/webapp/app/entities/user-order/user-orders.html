@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="jhipsterSampleApplicationApp.userOrder.home.title">User Orders</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="user-order.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterSampleApplicationApp.userOrder.home.createLabel">
+                        Create new User Order
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validated"><span data-translate="jhipsterSampleApplicationApp.userOrder.validated">Validated</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="magDevice"><span data-translate="jhipsterSampleApplicationApp.userOrder.magDevice">Mag Device</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="creationDate"><span data-translate="jhipsterSampleApplicationApp.userOrder.creationDate">Creation Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="orderStatus"><span data-translate="jhipsterSampleApplicationApp.userOrder.orderStatus">Order Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="orderType"><span data-translate="jhipsterSampleApplicationApp.userOrder.orderType">Order Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="paySystem"><span data-translate="jhipsterSampleApplicationApp.userOrder.paySystem">Pay System</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="usernameRenewal"><span data-translate="jhipsterSampleApplicationApp.userOrder.usernameRenewal">Username Renewal</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="passwordRenewal"><span data-translate="jhipsterSampleApplicationApp.userOrder.passwordRenewal">Password Renewal</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="note"><span data-translate="jhipsterSampleApplicationApp.userOrder.note">Note</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="magAddress"><span data-translate="jhipsterSampleApplicationApp.userOrder.magAddress">Mag Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.id"><span data-translate="jhipsterSampleApplicationApp.userOrder.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="packageTv.id"><span data-translate="jhipsterSampleApplicationApp.userOrder.packageTv">Package Tv</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="userOrder in vm.userOrders track by userOrder.id">
+                    <td><a ui-sref="user-order-detail({id:userOrder.id})">{{userOrder.id}}</a></td>
+                    <td>{{userOrder.validated}}</td>
+                    <td>{{userOrder.magDevice}}</td>
+                        <td>{{userOrder.creationDate | date:'mediumDate'}}</td>
+                    <td data-translate="{{'jhipsterSampleApplicationApp.OrderStatusEnum.' + userOrder.orderStatus}}">{{userOrder.orderStatus}}</td>
+                    <td data-translate="{{'jhipsterSampleApplicationApp.OrderTypeEnum.' + userOrder.orderType}}">{{userOrder.orderType}}</td>
+                    <td data-translate="{{'jhipsterSampleApplicationApp.PaySystemEnum.' + userOrder.paySystem}}">{{userOrder.paySystem}}</td>
+                    <td>{{userOrder.usernameRenewal}}</td>
+                    <td>{{userOrder.passwordRenewal}}</td>
+                    <td>{{userOrder.note}}</td>
+                    <td>{{userOrder.magAddress}}</td>
+                    <td>
+                        {{userOrder.user.id}}
+                    </td>
+                    <td>
+                        <a ui-sref="package-tv-detail({id:userOrder.packageTv.id})">{{userOrder.packageTv.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="user-order-detail({id:userOrder.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-order.edit({id:userOrder.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-order.delete({id:userOrder.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

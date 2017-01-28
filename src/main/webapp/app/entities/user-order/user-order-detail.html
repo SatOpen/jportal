@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="jhipsterSampleApplicationApp.userOrder.detail.title">User Order</span> {{vm.userOrder.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.validated">Validated</span></dt>
+        <dd>
+            <span>{{vm.userOrder.validated}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.magDevice">Mag Device</span></dt>
+        <dd>
+            <span>{{vm.userOrder.magDevice}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.userOrder.creationDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.orderStatus">Order Status</span></dt>
+        <dd>
+            <span data-translate="{{'jhipsterSampleApplicationApp.OrderStatusEnum.' + vm.userOrder.orderStatus}}">{{vm.userOrder.orderStatus}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.orderType">Order Type</span></dt>
+        <dd>
+            <span data-translate="{{'jhipsterSampleApplicationApp.OrderTypeEnum.' + vm.userOrder.orderType}}">{{vm.userOrder.orderType}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.paySystem">Pay System</span></dt>
+        <dd>
+            <span data-translate="{{'jhipsterSampleApplicationApp.PaySystemEnum.' + vm.userOrder.paySystem}}">{{vm.userOrder.paySystem}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.usernameRenewal">Username Renewal</span></dt>
+        <dd>
+            <span>{{vm.userOrder.usernameRenewal}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.passwordRenewal">Password Renewal</span></dt>
+        <dd>
+            <span>{{vm.userOrder.passwordRenewal}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.note">Note</span></dt>
+        <dd>
+            <span>{{vm.userOrder.note}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.magAddress">Mag Address</span></dt>
+        <dd>
+            <span>{{vm.userOrder.magAddress}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.user">User</span></dt>
+        <dd>
+            {{vm.userOrder.user.id}}
+        </dd>
+        <dt><span data-translate="jhipsterSampleApplicationApp.userOrder.packageTv">Package Tv</span></dt>
+        <dd>
+            <a ui-sref="package-tv-detail({id:vm.userOrder.packageTv.id})">{{vm.userOrder.packageTv.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="user-order-detail.edit({id:vm.userOrder.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

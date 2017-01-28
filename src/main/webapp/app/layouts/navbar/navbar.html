@@ -50,6 +50,18 @@
                                 <span data-translate="global.menu.entities.operation">Operation</span>
                             </a>
                         </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="user-order" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                <span data-translate="global.menu.entities.userOrder">User Order</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" has-authority="ROLE_ADMIN">
+                            <a ui-sref="package-tv" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                <span data-translate="global.menu.entities.packageTv">Package Tv</span>
+                            </a>
+                        </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>

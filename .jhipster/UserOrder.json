@@ -1,0 +1,84 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "packageTv",
+            "otherEntityName": "packageTv",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "validated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "magDevice",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "OrderStatusEnum",
+            "fieldValues": "Pending,Validated,Suspended"
+        },
+        {
+            "fieldName": "orderType",
+            "fieldType": "OrderTypeEnum",
+            "fieldValues": "New,Renewal"
+        },
+        {
+            "fieldName": "paySystem",
+            "fieldType": "PaySystemEnum",
+            "fieldValues": "MyCommerce,Skrill,Neteller,PaySafeCard,Bitcoins"
+        },
+        {
+            "fieldName": "usernameRenewal",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "passwordRenewal",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "magAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        }
+    ],
+    "changelogDate": "20170128130520",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "user_order",
+    "pagination": "pagination"
+}

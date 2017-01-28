@@ -1,0 +1,34 @@
+{
+    "jhipsterSampleApplicationApp": {
+        "packageTv" : {
+            "home": {
+                "title": "Package Tvs",
+                "createLabel": "Create a new Package Tv",
+                "createOrEditLabel": "Create or edit a Package Tv",
+                "search": "Search for Package Tv"
+            },
+            "created": "A new Package Tv is created with identifier {{ param }}",
+            "updated": "A Package Tv is updated with identifier {{ param }}",
+            "deleted": "A Package Tv is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Package Tv {{ id }}?"
+            },
+            "detail": {
+                "title": "Package Tv"
+            },
+            "packageName": "Package Name",
+            "priceSkrill": "Price Skrill",
+            "priceNeteller": "Price Neteller",
+            "priceBitcoins": "Price Bitcoins",
+            "note": "Note",
+            "priceMyCommerce": "Price My Commerce",
+            "descriptionMyCommerce": "Description My Commerce",
+            "descriptionSkrill": "Description Skrill",
+            "descriptionNeteller": "Description Neteller",
+            "descriptionBitcoins": "Description Bitcoins",
+            "pricePaySafeCard": "Price Pay Safe Card",
+            "descriptionPaySafeCard": "Description Pay Safe Card",
+            "userOrder": "User Order"
+        }
+    }
+}

@@ -32,5 +32,11 @@
 
     <cache alias="io.github.jhipster.sample.domain.Operation.labels" uses-template="simple"/>
 
+    <cache alias="io.github.jhipster.sample.domain.UserOrder" uses-template="simple"/>
+
+    <cache alias="io.github.jhipster.sample.domain.PackageTv" uses-template="simple"/>
+
+    <cache alias="io.github.jhipster.sample.domain.PackageTv.userOrders" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

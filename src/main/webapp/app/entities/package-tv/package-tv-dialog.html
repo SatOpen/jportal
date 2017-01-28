@@ -1,0 +1,205 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPackageTvLabel" data-translate="jhipsterSampleApplicationApp.packageTv.home.createOrEditLabel">Create or edit a Package Tv</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.packageTv.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.packageTv.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.packageName" for="field_packageName">Package Name</label>
+            <select class="form-control" name="packageName" ng-model="vm.packageTv.packageName" id="field_packageName" required>
+                <option value="Iptv_1" data-translate="jhipsterSampleApplicationApp.PackageNameEnum.Iptv_1">Iptv_1</option>
+                <option value="Cs_1" data-translate="jhipsterSampleApplicationApp.PackageNameEnum.Cs_1">Cs_1</option>
+            </select>
+            <div ng-show="editForm.packageName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.packageName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.priceSkrill" for="field_priceSkrill">Price Skrill</label>
+            <input type="number" class="form-control" name="priceSkrill" id="field_priceSkrill"
+                    ng-model="vm.packageTv.priceSkrill"
+                    required max="100" />
+            <div ng-show="editForm.priceSkrill.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priceSkrill.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceSkrill.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceSkrill.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.priceNeteller" for="field_priceNeteller">Price Neteller</label>
+            <input type="number" class="form-control" name="priceNeteller" id="field_priceNeteller"
+                    ng-model="vm.packageTv.priceNeteller"
+                    required max="100" />
+            <div ng-show="editForm.priceNeteller.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priceNeteller.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceNeteller.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceNeteller.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.priceBitcoins" for="field_priceBitcoins">Price Bitcoins</label>
+            <input type="number" class="form-control" name="priceBitcoins" id="field_priceBitcoins"
+                    ng-model="vm.packageTv.priceBitcoins"
+                    required max="100" />
+            <div ng-show="editForm.priceBitcoins.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priceBitcoins.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceBitcoins.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceBitcoins.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.note" for="field_note">Note</label>
+            <input type="text" class="form-control" name="note" id="field_note"
+                    ng-model="vm.packageTv.note"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.priceMyCommerce" for="field_priceMyCommerce">Price My Commerce</label>
+            <input type="number" class="form-control" name="priceMyCommerce" id="field_priceMyCommerce"
+                    ng-model="vm.packageTv.priceMyCommerce"
+                    required max="100" />
+            <div ng-show="editForm.priceMyCommerce.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priceMyCommerce.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceMyCommerce.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceMyCommerce.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.descriptionMyCommerce" for="field_descriptionMyCommerce">Description My Commerce</label>
+            <input type="text" class="form-control" name="descriptionMyCommerce" id="field_descriptionMyCommerce"
+                    ng-model="vm.packageTv.descriptionMyCommerce"
+                    ng-maxlength="255" />
+            <div ng-show="editForm.descriptionMyCommerce.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descriptionMyCommerce.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.descriptionSkrill" for="field_descriptionSkrill">Description Skrill</label>
+            <input type="text" class="form-control" name="descriptionSkrill" id="field_descriptionSkrill"
+                    ng-model="vm.packageTv.descriptionSkrill"
+                    ng-maxlength="255" />
+            <div ng-show="editForm.descriptionSkrill.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descriptionSkrill.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.descriptionNeteller" for="field_descriptionNeteller">Description Neteller</label>
+            <input type="text" class="form-control" name="descriptionNeteller" id="field_descriptionNeteller"
+                    ng-model="vm.packageTv.descriptionNeteller"
+                    ng-maxlength="255" />
+            <div ng-show="editForm.descriptionNeteller.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descriptionNeteller.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.descriptionBitcoins" for="field_descriptionBitcoins">Description Bitcoins</label>
+            <input type="text" class="form-control" name="descriptionBitcoins" id="field_descriptionBitcoins"
+                    ng-model="vm.packageTv.descriptionBitcoins"
+                    ng-maxlength="255" />
+            <div ng-show="editForm.descriptionBitcoins.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descriptionBitcoins.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.pricePaySafeCard" for="field_pricePaySafeCard">Price Pay Safe Card</label>
+            <input type="number" class="form-control" name="pricePaySafeCard" id="field_pricePaySafeCard"
+                    ng-model="vm.packageTv.pricePaySafeCard"
+                    required max="100" />
+            <div ng-show="editForm.pricePaySafeCard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricePaySafeCard.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pricePaySafeCard.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pricePaySafeCard.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterSampleApplicationApp.packageTv.descriptionPaySafeCard" for="field_descriptionPaySafeCard">Description Pay Safe Card</label>
+            <input type="text" class="form-control" name="descriptionPaySafeCard" id="field_descriptionPaySafeCard"
+                    ng-model="vm.packageTv.descriptionPaySafeCard"
+                    ng-maxlength="255" />
+            <div ng-show="editForm.descriptionPaySafeCard.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descriptionPaySafeCard.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

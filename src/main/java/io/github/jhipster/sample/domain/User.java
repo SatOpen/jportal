@@ -79,7 +79,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Order> orders = new HashSet<>();
+    private Set<UserOrder> orders = new HashSet<>();
 
     @JsonIgnore
     @ManyToMany
@@ -200,11 +200,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.persistentTokens = persistentTokens;
     }
 
-    public Set<Order> getOrders() {
+    public Set<UserOrder> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Order> orders) {
+    public void setOrders(Set<UserOrder> orders) {
         this.orders = orders;
     }
 
